@@ -1,3 +1,4 @@
+![Cobby Banner](/img/banner.png?raw=true)
 # Cobby Bot
 Happen to be in a motorcycling group that is obsessed with Eloté? Then you've found the perfect discord bot.
 
