@@ -39,7 +39,7 @@
                 "containers": [
                     {
                         "name": "cornbot",
-                        "image": "gcr.io/discordbots/cornbot:v1.0.0",
+                        "image": "gcr.io/discordbots-168917/cornbot:v1.0.1",
                         "imagePullPolicy": "Always",
                         "env": [
                             {
