@@ -4,7 +4,7 @@ RUN mkdir -p /usr/src
 COPY . /usr/app
 
 WORKDIR /usr/app
-RUN yarn --prod &\
+RUN yarn            &\
     yarn cache clean
 
 EXPOSE 3000
