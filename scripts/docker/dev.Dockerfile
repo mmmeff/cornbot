@@ -1,6 +1,6 @@
 FROM node:7-alpine
 
-RUN mkdir -p /usr/src
+RUN mkdir -p /usr/app
 COPY . /usr/app
 
 WORKDIR /usr/app
