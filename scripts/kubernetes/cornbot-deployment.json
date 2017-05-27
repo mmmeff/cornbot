@@ -1,0 +1,70 @@
+{
+    "apiVersion": "extensions/v1beta1",
+    "kind": "Deployment",
+
+    "metadata": {
+        "name": "cornbot",
+        "namespace": "default",
+        "labels": {
+            "app": "cornbot",
+            "version": "latest"
+        }
+    },
+
+    "spec": {
+        "replicas": 1,
+        "selector": {
+            "matchLabels": {
+                "app": "cornbot",
+                "version": "latest"
+            }
+        },
+        "strategy": {
+            "type": "RollingUpdate",
+            "rollingUpdate": {
+                "maxSurge": 1,
+                "maxUnavailable": 1
+            }
+        },
+        "template": {
+            "metadata": {
+                "creationTimestamp": null,
+                "name": "cornbot",
+                "labels": {
+                    "app": "cornbot",
+                    "version": "latest"
+                }
+            },
+            "spec": {
+                "containers": [
+                    {
+                        "name": "cornbot",
+                        "image": "gcr.io/discordbots/cornbot:v1.0.0",
+                        "imagePullPolicy": "Always",
+                        "env": [
+                            {
+                                "name": "COBBY_DISCORD_TOKEN",
+                                "value": "changeme"
+                            },
+                            {
+                                "name": "COBBY_SUBREDDIT",
+                                "value": "motola"
+                            },
+                            {
+                                "name": "COBBY_CHANNELIDS",
+                                "value": "318136791154556928"
+                            }
+                        ],
+                        "resources": {},
+                        "securityContext": {
+                            "privileged": false
+                        },
+                        "terminationMessagePath": "/dev/termination-log"
+                    }
+                ],
+                "volumes": [
+                ]
+            }
+        }
+    }
+}

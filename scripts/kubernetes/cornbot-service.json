@@ -1,0 +1,36 @@
+{
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+        "labels": {
+            "app": "cornbot",
+            "version": "latest"
+        },
+        "name": "cornbot-loadbalancer",
+        "namespace": "default"
+    },
+    "spec": {
+        "ports": [
+            {
+                "name": "cornbot-http",
+                "nodePort": 32420,
+                "port": 80,
+                "protocol": "TCP",
+                "targetPort": 80
+            },
+            {
+                "name": "cornbot-https",
+                "nodePort": 32421,
+                "port": 443,
+                "protocol": "TCP",
+                "targetPort": 443
+            }
+        ],
+        "selector": {
+            "app": "cornbot",
+            "version": "latest"
+        },
+        "sessionAffinity": "None",
+        "type": "LoadBalancer"
+    }
+}

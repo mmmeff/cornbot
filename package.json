@@ -4,11 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node . | bunyan",
+    "watch": "nodemon --watch 'src/**/*.*' -e \"ts-node -P tsconfig.json\" | bunyan"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.1.0"
+    "bunyan": "^1.8.10",
+    "convict": "^3.0.0",
+    "discord.js": "^11.1.0",
+    "reddit-snooper": "^1.0.1",
+    "ts-node": "^3.0.4",
+    "typescript": "^2.3.3"
+  },
+  "devDependencies": {
+    "@types/bunyan": "^0.0.36",
+    "@types/convict": "^3.0.0",
+    "nodemon": "^1.11.0"
   }
 }

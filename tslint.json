@@ -1,0 +1,23 @@
+{
+    "extends": "tslint:recommended",
+    "rules": {
+        "semicolon": [ true, "never" ],
+        "trailing-comma": false,
+        "no-trailing-whitespace": false,
+        "no-console": false,
+        "object-literal-sort-keys": false,
+        "ordered-imports": false,
+        "curly": false,
+        "arrow-parens": false,
+        "eofline": false,
+        "interface-name": false,
+        "no-empty-interface": false,
+        "member-ordering": false,
+        "max-line-length": false,
+        "object-literal-key-quotes": false,
+        "max-classes-per-file": false,
+        "no-var-requires": false,
+        "ban-types": false,
+        "no-empty": false
+    }
+}
